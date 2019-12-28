@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeSet;
 
 public class BoardHelper extends  HelperBase{
   public BoardHelper(WebDriver driver) {

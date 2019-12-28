@@ -10,12 +10,19 @@ public class SessionHelper extends  HelperBase{
       super(driver);
   }
 
-  public void login(String email, String password) {
+  public void login(String email, String password) throws InterruptedException {
     new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.cssSelector("[href='/login']")));
     click(By.cssSelector("[href='/login']"));
     type(By.cssSelector("[type=email]"), email);
-    type(By.cssSelector("[type=password]"), password);
     click(By.id("login"));
+    Thread.sleep(3000);
+    click(By.id("login-submit"));
+    Thread.sleep(3000);
+    type(By.id("password"), password);
+    Thread.sleep(3000);
+    click(By.id("login-submit"));
+    /*type(By.cssSelector("[type=password]"), password);
+    click(By.id("login"));*/
   }
 
   public void openSite(String url) {
